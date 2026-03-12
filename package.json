@@ -1,0 +1,31 @@
+{
+  "name": "cursor-cli-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that connects any AI agent to every model in your Cursor subscription. No API keys needed.",
+  "type": "module",
+  "bin": {
+    "cursor-cli-mcp": "index.js"
+  },
+  "keywords": [
+    "mcp",
+    "cursor",
+    "claude",
+    "codex",
+    "ai",
+    "model-context-protocol",
+    "code-review",
+    "llm"
+  ],
+  "author": "MazRadwan",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MazRadwan/cursor-cli-mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
