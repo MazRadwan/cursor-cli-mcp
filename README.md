@@ -184,8 +184,8 @@ Model availability depends on your Cursor subscription tier.
 
 ```mermaid
 flowchart LR
-    A["MCP Client\n(Claude Code, Codex CLI, etc.)"] -- "stdio\nMCP protocol" --> B["cursor-cli-mcp\n(this server)"]
-    B -- "exec\nagent binary" --> C["Cursor CLI\n(40+ models)"]
+    A["MCP Client<br/>(Claude Code, Codex CLI, etc.)"] -- "stdio / MCP protocol" --> B["cursor-cli-mcp"]
+    B -- "exec / agent binary" --> C["Cursor CLI<br/>(40+ models)"]
     C -- response --> B
     B -- response --> A
 
