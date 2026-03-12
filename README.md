@@ -182,12 +182,16 @@ Model availability depends on your Cursor subscription tier.
 
 ## How it works
 
-```
-┌─────────────┐     stdio      ┌────────────────┐     exec      ┌─────────────┐
-│  MCP Client  │ ──────────── │  cursor-cli-mcp │ ──────────── │  Cursor CLI  │
-│  (Claude,    │    MCP        │   (this server) │   agent      │  (40+ models)│
-│   Codex...)  │   protocol    │                 │   binary     │              │
-└─────────────┘               └────────────────┘               └─────────────┘
+```mermaid
+flowchart LR
+    A["MCP Client\n(Claude Code, Codex CLI, etc.)"] -- "stdio\nMCP protocol" --> B["cursor-cli-mcp\n(this server)"]
+    B -- "exec\nagent binary" --> C["Cursor CLI\n(40+ models)"]
+    C -- response --> B
+    B -- response --> A
+
+    style A fill:#2d333b,stroke:#539bf5,stroke-width:2px,color:#adbac7
+    style B fill:#2d333b,stroke:#57ab5a,stroke-width:2px,color:#adbac7
+    style C fill:#2d333b,stroke:#daaa3f,stroke-width:2px,color:#adbac7
 ```
 
 1. Your MCP client sends a tool call over stdio
